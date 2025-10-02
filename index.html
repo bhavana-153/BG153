@@ -5,43 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Eternal Love Story</title>
 <style>
-:root {
-  --pink:#ffafcc;
-  --dark-pink:#e75480;
-  --peach:#ffc8dd;
-  --light:#fff0f3;
-  --text:#555;
+:root { 
+  --pink: #ffafcc;
+  --dark-pink: #e75480;
+  --peach: #ffc8dd;
+  --light: #fff0f3;
+  --text: #555;
 }
-* {margin:0; padding:0; box-sizing:border-box;}
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-  font-family:'Playfair Display', serif;
-  background:linear-gradient(to bottom, #fff0f3, #ffc2d1);
-  color:var(--text);
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom, #fff0f3, #ffc2d1);
+  color: var(--text);
   min-height:100vh;
   overflow-x:hidden;
 }
-.page {display:none; padding:20px; min-height:100vh; position:relative;}
-.active-page {display:block;}
+.page { display:none; padding:20px; min-height:100vh; position:relative; }
+.active-page { display:block; }
 
 /* Hearts animation */
 .heart-container {
-  position:absolute; top:0; left:0;
-  width:100%; height:100%;
-  pointer-events:none; overflow:hidden; z-index:0;
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
 }
 .heart {
-  position:absolute; font-size:24px; color:var(--dark-pink);
-  opacity:0; animation: float 6s linear infinite;
+  position:absolute;
+  font-size:24px;
+  color:var(--dark-pink);
+  opacity:0;
+  animation: float 6s linear infinite;
 }
 @keyframes float {
-  0% {transform:translateY(100vh) rotate(0deg); opacity:1;}
-  100% {transform:translateY(-50px) rotate(360deg); opacity:0;}
+  0% { transform: translateY(100vh) rotate(0deg); opacity:1; }
+  100% { transform: translateY(-50px) rotate(360deg); opacity:0; }
 }
 
 /* Login */
 .login-box {
-  position:relative; z-index:10;
-  background:rgba(255,255,255,0.95);
+  position:relative;
+  z-index:10;
+  background: rgba(255,255,255,0.95);
   padding:40px 30px;
   border-radius:20px;
   max-width:400px;
@@ -50,38 +59,85 @@ body {
   box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 .login-box input {
-  width:90%; padding:12px 15px; margin:10px 0;
-  border-radius:50px; border:2px solid #ffd1dc; font-size:1rem;
+  width:90%;
+  padding:12px 15px;
+  margin:10px 0;
+  border-radius:50px;
+  border:2px solid #ffd1dc;
+  font-size:1rem;
 }
 .login-box input:focus {
-  border-color: var(--dark-pink); box-shadow:0 0 10px rgba(231,84,128,0.3);
+  border-color: var(--dark-pink);
+  box-shadow:0 0 10px rgba(231,84,128,0.3);
 }
 button {
-  background: var(--dark-pink); color:white; border:none;
-  padding:10px 20px; border-radius:10px; cursor:pointer; margin:10px 0;
+  background: var(--dark-pink);
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  margin:10px 0;
 }
 
-/* Chapters */
-#chapters-container {display:flex; flex-direction:column; gap:15px; max-width:600px; margin:30px auto;}
+/* Chapters List */
+#chapters-container {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:600px;
+  margin:30px auto;
+}
 .chapter-title {
-  background:white; border-radius:15px; padding:15px 20px;
-  font-size:1.2rem; font-weight:bold; color: var(--dark-pink);
-  cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  background:white;
+  border-radius:15px;
+  padding:15px 20px;
+  font-size:1.2rem;
+  font-weight:bold;
+  color: var(--dark-pink);
+  cursor:pointer;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.3s;
 }
-.chapter-title:hover {transform:scale(1.02); box-shadow:0 6px 14px rgba(0,0,0,0.15);}
+.chapter-title:hover {
+  transform:scale(1.02);
+  box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
 
 /* Story Page */
-#story-page {max-width:800px; margin:0 auto; padding:20px;}
-.story-img {width:100%; border-radius:15px; margin:20px 0; border:3px solid var(--pink);}
-#story-content {background: rgba(255,255,255,0.9); padding:20px; border-radius:15px; line-height:1.7; margin-bottom:20px;}
-#timestamp {text-align:center; font-style:italic; color: var(--dark-pink); margin-bottom:20px;}
-.navigation {display:flex; justify-content:space-between;}
+#story-page {
+  max-width:800px;
+  margin:0 auto;
+  padding:20px;
+}
+.story-img {
+  width:100%;
+  border-radius:15px;
+  margin:20px 0;
+  border:3px solid var(--pink);
+}
+#story-content {
+  background: rgba(255,255,255,0.9);
+  padding:20px;
+  border-radius:15px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+#timestamp {
+  text-align:center;
+  font-style:italic;
+  color: var(--dark-pink);
+  margin-bottom:20px;
+}
+.navigation {
+  display:flex;
+  justify-content:space-between;
+}
 </style>
 </head>
 <body>
 
-<!-- Login -->
+<!-- Login Page -->
 <div id="login-page" class="page active-page">
   <div class="heart-container" id="login-hearts"></div>
   <div class="login-box">
@@ -93,13 +149,13 @@ button {
   </div>
 </div>
 
-<!-- Chapters -->
+<!-- Chapters Page -->
 <div id="chapter-page" class="page">
   <h1 style="text-align:center; color:var(--dark-pink)">Our Love Journey</h1>
   <div id="chapters-container"></div>
 </div>
 
-<!-- Story -->
+<!-- Story Page -->
 <div id="story-page" class="page">
   <div class="heart-container" id="story-hearts"></div>
   <button onclick="goBackToChapters()">← Back</button>
@@ -116,11 +172,12 @@ button {
 <script>
 let currentChapter = 0;
 
-// Hearts animation
+// Floating hearts
 function createHearts(containerId){
   const container=document.getElementById(containerId);
   const heart=document.createElement('div');
-  heart.className='heart'; heart.innerHTML='❤';
+  heart.className='heart';
+  heart.innerHTML='❤';
   heart.style.left=Math.random()*100+'vw';
   heart.style.animationDuration=(Math.random()*5+5)+'s';
   container.appendChild(heart);
@@ -129,18 +186,18 @@ function createHearts(containerId){
 setInterval(()=>createHearts('login-hearts'),3000);
 setInterval(()=>createHearts('story-hearts'),3000);
 
-// Chapters array with proper image paths
+// All 10 chapters full content
 const chapters=[
-  {title:"Chapter 1: The Beginning", image:"images/p1.png", content:`Among our lively group of 10 college friends, there was a special connection growing between us. During those chaotic PU days filled with laughter and adventures, I found myself drawn to you. How you always made everyone feel included - it was impossible not to fall for you.<br><br>Little did we know, our group hangouts were secretly becoming my favorite moments because of you. I'd find excuses to sit beside you, dance with you during these practices, my heart racing when our hands accidentally touched. Those stolen glances across the classroom spoke volumes even before we uttered a word.<br><br>Remember when you started teasing me JAANU, I was literally feeling like you are calling me that way, that small act made my day. It was in these ordinary moments that something extraordinary was blossoming between us. Now don't forget these moments and ask me in future, "How was your dream boy" - you are always the one in dream and reality too.`, timestamp:""},
-  {title:"Chapter 2: First Dance Together", image:"images/p2.png", content:`The college cultural fest brought our first magical moment as dance partners. Though we were dancing with our whole friend group, when our hands touched during the routine, electricity shot through me. I'll never forget how perfectly we moved together - like our bodies already knew the rhythm of each other's hearts.<br><br>During practice, I'd often miss steps just watching your concentration face. That evening, as we twirled under the fairy lights to the final notes, our eyes locked in a moment that felt suspended in time.<br><br>When our friends cheered, you didn't let go of my hand immediately. That extra three seconds of connection meant everything. Walking home that evening, I replayed every moment we touched, already hoping for our next dance.`, timestamp:""},
-  {title:"Chapter 3: Midnight Confessions", image:"images/p3.png", content:`December 1, 2022 - a date forever etched in my heart. At 10:18 PM, after days of mustering courage, my trembling fingers finally typed: "There's something I need to tell you...I love you."<br><br>Those three dots blinking felt like eternity. When your reply came - "I love you too" - tears of joy streamed down my face. We confessed everything: how I'd linger after class hoping you'd walk with me.<br><br>Distance vanished as we messaged, planning our first official movie date. You used to sing and send me, and I played it on repeat all day. Our digital love story began that magical night, two hearts connecting across screens.`, timestamp:"December 1, 2022 • 10:18 PM"},
-  {title:"Chapter 4: Endless Chats", image:"images/p4.png", content:`Walking into college the next morning, my heart threatened to escape my chest. There you were, in class, that shy smile playing on your lips. "Good morning," you whispered- a secret hello that sent sparks through me.<br><br>When we gathered our friends at lunch, as we made our announcement. The eruption of cheers, hugs, and "finally!" comments made everything beautifully real.<br><br>Later, as we walked just the two of us, I was like is this dream or real (you are my fulfilled dream).`, timestamp:"December 2, 2022"},
-  {title:"Chapter 5: Our Secret Dates", image:"images/p5.png", content:`Our farewell performance as college sweethearts became the stuff of campus legend. During rehearsals, we transformed the practice room into our private world. Me being choreographer playing with you all the time more than practicing, you whispered, "Finally, my chance to hold you properly."<br><br>On performance day, stage lights became our personal constellation. During our solo, the world faded away - just your strong arms guiding me, my head finding its home on your shoulder. The final dip took my breath away: your face inches from mine, eyes saying everything our lips couldn't.<br><br>Backstage, still breathless and glitter-covered, you holding me and those twirling. "This is just the beginning," you promised. Applause was deafening, but the quiet thrumming of our hearts was the real music.`, timestamp:""},
-  {title:"Chapter 6: Challenges & Strength", image:"images/p6.png", content:`April 3, 2023 - my first birthday as your girlfriend. You arrived with that adorable nervous smile, clutching a carefully wrapped gift. Inside lay the cutest Buddha statue ("Representing you") and a wall hanging, I would cherish forever in my heart and in real.<br><br>"I know it's simple," you started, but your words dissolved as I threw my arms around you. In that embrace, time stopped - your scent, the solid warmth of you, your heartbeat syncing with mine. You whispered, "Happy birthday," and I knew no gift could ever compare to belonging to you.<br><br>Our movie date felt surreal - stealing glances more than watching the screen. When you hold my hands with yours, I forgot how to breathe. That night, falling asleep with your goodnight message glowing on my phone, I knew: this was just the first of a lifetime of birthdays with you.`, timestamp:"April 3, 2023"},
-  {title:"Chapter 7: Dreams Together", image:"images/p7.png", content:`That week of misunderstandings was our first real storm. Seeing you online but not replying to my messages felt like physical pain. I cried myself to sleep, wondering if our love was already fading.<br><br>When I withdrew into silence - too hurt to keep reaching out. "I can't breathe when we're like this," I was in worst. We talked for hours and then you apologized after months, unraveling every misunderstanding thread by thread.<br><br>You confessed you'd been scared - of how deeply you felt, of not being enough. I admitted my insecurities. That day, we forged a new promise: "No matter how angry, always come back to each other before sunset." But we are not following that remember. Our love emerged stronger, like no break-up but not healthy yet. We have to learn more and I trust we will.`, timestamp:""},
-  {title:"Chapter 8: Special Surprises", image:"images/p8.png", content:`Since that storm, we've weathered every challenge hand-in-hand. Remember when we got hopelessly lost and quiet.<br><br>We've created a new habit: Meeting whenever possible and video calls was like everyday when apart, leaving love notes ,saying "I'm here." Through every challenge - family expectations, college pressures, personal doubts - we've become each other's sanctuary.<br><br>Our promise remains: "Whatever comes, we face it together." This bond isn't just romance; it's a partnership forged in shared dreams and unwavering commitment. Every "I love you" feels like renewing a lifelong vow.`, timestamp:""},
-  {title:"Chapter 9: Forever Promises", image:"images/p9.png", content:`Our late-night future-planning sessions are my favorite. You tracing constellations on my palm while describing our someday home. And us knowing about each other more and more. Talking about the whole day and asking before doing something like not out of fear but out of respect for each other.<br><br>Every plan includes "together" because we're co-authoring our forever story.<br><br>When you whisper, "Grow old with me?" my heart answers before my lips: "Always." Our dreams are no longer "I" or "you" - they're "us" written in the stars. Lets give justice for "US" and our "LOVE" too.`, timestamp:""},
-  {title:"Chapter 10: Our Eternal Love", image:"images/p10.jpg", content:`This is more than teenage romance - it's our sacred destiny. I treasure every artifact of us: movie tickets, your doodles on my notes, all pictures and videos. Each is a testament to a love that deepens daily.<br><br>When we say "I do" someday, it'll simply formalize what our souls already know. I imagine you at the altar - that same nervous smile from my birthday, eyes shining with tears. Our first dance will be to "our song," completing the circle that began at college.<br><br>Through every unwritten chapter - careers, homes, joys, challenges - we'll hold this truth: Our love is eternal. Thank you for choosing me every day since December 1st at 10:18 PM. Here's to forever, my soulmate.`, timestamp:"Forever and Always ❤️"}
+{title:"Chapter 1: The Beginning", image:"p1.png", content:`Among our lively group of 10 college friends, there was a special connection growing between us. During those chaotic PU days filled with laughter and adventures, I found myself drawn to you. How you always made everyone feel included - it was impossible not to fall for you.<br><br>Little did we know, our group hangouts were secretly becoming my favorite moments because of you. I'd find excuses to sit beside you, dance with you during these practices, my heart racing when our hands accidentally touched. Those stolen glances across the classroom spoke volumes even before we uttered a word.<br><br>Remember when you started teasing me JAANU, I was literally feeling like you are calling me that way, that small act made my day. It was in these ordinary moments that something extraordinary was blossoming between us. Now don't forget these moments and ask me in future, "How was your dream boy" - you are always the one in dream and reality too.`, timestamp:""},
+{title:"Chapter 2: First Dance Together", image:"p2.png", content:`The college cultural fest brought our first magical moment as dance partners. Though we were dancing with our whole friend group, when our hands touched during the routine, electricity shot through me. I'll never forget how perfectly we moved together - like our bodies already knew the rhythm of each other's hearts.<br><br>During practice, I'd often miss steps just watching your concentration face. That evening, as we twirled under the fairy lights to the final notes, our eyes locked in a moment that felt suspended in time.<br><br>When our friends cheered, you didn't let go of my hand immediately. That extra three seconds of connection meant everything. Walking home that evening, I replayed every moment we touched, already hoping for our next dance.`, timestamp:""},
+{title:"Chapter 3: Midnight Confessions", image:"p3.png", content:`December 1, 2022 - a date forever etched in my heart. At 10:18 PM, after days of mustering courage, my trembling fingers finally typed: "There's something I need to tell you...I love you."<br><br>Those three dots blinking felt like eternity. When your reply came - "I love you too" - tears of joy streamed down my face. We confessed everything: how I'd linger after class hoping you'd walk with me.<br><br>Distance vanished as we messaged, planning our first official movie date. You used to sing and send me, and I played it on repeat all day. Our digital love story began that magical night, two hearts connecting across screens.`, timestamp:"December 1, 2022 • 10:18 PM"},
+{title:"Chapter 4: Endless Chats", image:"p4.png", content:`Walking into college the next morning, my heart threatened to escape my chest. There you were, in class, that shy smile playing on your lips. "Good morning," you whispered- a secret hello that sent sparks through me.<br><br>When we gathered our friends at lunch, as we made our announcement. The eruption of cheers, hugs, and "finally!" comments made everything beautifully real.<br><br>Later, as we walked just the two of us, I was like is this dream or real (you are my fulfilled dream).`, timestamp:"December 2, 2022"},
+{title:"Chapter 5: Our Secret Dates", image:"p5.png", content:`Our farewell performance as college sweethearts became the stuff of campus legend. During rehearsals, we transformed the practice room into our private world. Me being choreographer playing with you all the time more than practicing, you whispered, "Finally, my chance to hold you properly."<br><br>On performance day, stage lights became our personal constellation. During our solo, the world faded away - just your strong arms guiding me, my head finding its home on your shoulder. The final dip took my breath away: your face inches from mine, eyes saying everything our lips couldn't.<br><br>Backstage, still breathless and glitter-covered, you holding me and those twirling. "This is just the beginning," you promised.' applause was deafening, but the quiet thrumming of our hearts was the real music.`, timestamp:""},
+{title:"Chapter 6: Challenges & Strength", image:"p6.png", content:`April 3, 2023 - my first birthday as your girlfriend. You arrived with that adorable nervous smile, clutching a carefully wrapped gift. Inside lay the cutest Buddha statue ("Representing you") and a wall hanging, I would cherish forever in my heart and in real.<br><br>"I know it's simple," you started, but your words dissolved as I threw my arms around you. In that embrace, time stopped - your scent, the solid warmth of you, your heartbeat syncing with mine. You whispered, "Happy birthday," and I knew no gift could ever compare to belonging to you.<br><br>Our movie date felt surreal - stealing glances more than watching the screen. When you hold my hands with yours, I forgot how to breathe. That night, falling asleep with your goodnight message glowing on my phone, I knew: this was just the first of a lifetime of birthdays with you.`, timestamp:"April 3, 2023"},
+{title:"Chapter 7: Dreams Together", image:"p7.png", content:`That week of misunderstandings was our first real storm. Seeing you online but not replying to my messages felt like physical pain. I cried myself to sleep, wondering if our love was already fading.<br><br>When I withdrew into silence - too hurt to keep reaching out. "I can't breathe when we're like this," I was in worst. We talked for hours and then you apologized after months, unraveling every misunderstanding thread by thread.<br><br>You confessed you'd been scared - of how deeply you felt, of not being enough. I admitted my insecurities. That day, we forged a new promise: "No matter how angry, always come back to each other before sunset." But we are not following that remember. Our love emerged stronger, like no break-up but not healthy yet. We have to learn more and I trust we will.`, timestamp:""},
+{title:"Chapter 8: Special Surprises", image:"p8.png", content:`Since that storm, we've weathered every challenge hand-in-hand. Remember when we got hopelessly lost and quiet.<br><br>We've created a new habit: Meeting whenever possible and video calls was like everyday when apart, leaving love notes ,saying "I'm here." Through every challenge - family expectations, college pressures, personal doubts - we've become each other's sanctuary.<br><br>Our promise remains: "Whatever comes, we face it together." This bond isn't just romance; it's a partnership forged in shared dreams and unwavering commitment. Every "I love you" feels like renewing a lifelong vow.`, timestamp:""},
+{title:"Chapter 9: Forever Promises", image:"p9.png", content:`Our late-night future-planning sessions are my favorite. You tracing constellations on my palm while describing our someday home. And us knowing about each other more and more. Talking about the whole day and asking before doing something like not out of fear but out of respect for each other.<br><br>Every plan includes "together" because we're co-authoring our forever story.<br><br>When you whisper, "Grow old with me?" my heart answers before my lips: "Always." Our dreams are no longer "I" or "you" - they're "us" written in the stars. Lets give justice for "US" and our "LOVE" too.`, timestamp:""},
+{title:"Chapter 10: Our Eternal Love", image:"p10.jpg", content:`This is more than teenage romance - it's our sacred destiny. I treasure every artifact of us: movie tickets, your doodles on my notes, all pictures and videos. Each is a testament to a love that deepens daily.<br><br>When we say "I do" someday, it'll simply formalize what our souls already know. I imagine you at the altar - that same nervous smile from my birthday, eyes shining with tears. Our first dance will be to "our song," completing the circle that began at college.<br><br>Through every unwritten chapter - careers, homes, joys, challenges - we'll hold this truth: Our love is eternal. Thank you for choosing me every day since December 1st at 10:18 PM. Here's to forever, my soulmate.`, timestamp:"Forever and Always ❤️"}
 ];
 
 // Login
